@@ -39,8 +39,9 @@ namespace Assessment_For_Kurtosys
       WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(20)); // Increased timeout
       Actions actions = new Actions(_driver);
 
-      // Locate the "Insights" element
+      // Locate the "Insights" element 
       // IWebElement insightsButton = wait.Until(driver => driver.FindElement(By.XPath("//div[@class='kurtosys-toggle__label-text' and contains(text(), 'Insights')]/preceding-sibling::div")));
+      // The below change was made Post-Assessment, as it was bothering me.
       IWebElement insightsButton = wait.Until(driver => driver.FindElement(By.XPath("//li[@id='kurtosys-menu-item-75710']")));
 
       // Hover over the "Insights" element
