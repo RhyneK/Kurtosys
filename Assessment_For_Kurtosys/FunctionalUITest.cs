@@ -40,10 +40,12 @@ namespace Assessment_For_Kurtosys
       Actions actions = new Actions(_driver);
 
       // Locate the "Insights" element
-      IWebElement insightsButton = wait.Until(driver => driver.FindElement(By.XPath("//div[@class='kurtosys-toggle__label-text' and contains(text(), 'Insights')]/preceding-sibling::div")));
+      // IWebElement insightsButton = wait.Until(driver => driver.FindElement(By.XPath("//div[@class='kurtosys-toggle__label-text' and contains(text(), 'Insights')]/preceding-sibling::div")));
+      IWebElement insightsButton = wait.Until(driver => driver.FindElement(By.XPath("//li[@id='kurtosys-menu-item-75710']")));
 
       // Hover over the "Insights" element
       actions.MoveToElement(insightsButton).Perform();
+      WebDriverWait wait2 = new WebDriverWait(_driver, TimeSpan.FromSeconds(30));
 
       // Step 3: Locate and click on the "White Papers & eBooks" span element
       IWebElement whitePapersLink = wait.Until(driver => driver.FindElement(By.XPath("//span[@class='elementor-icon-list-text' and contains(text(), 'White Papers & eBooks')]")));
